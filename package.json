@@ -1,0 +1,20 @@
+{
+  "name": "rollup_test",
+  "version": "1.0.0",
+  "description": "rollup从入门到打包一个组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshengsunshine/rollup_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshengsunshine/rollup_test/issues"
+  },
+  "homepage": "https://github.com/anshengsunshine/rollup_test#readme"
+}

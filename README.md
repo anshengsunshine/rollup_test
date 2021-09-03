@@ -7,9 +7,9 @@ rollup从入门到打包一个组件库
 `npm i rollup`
 安装rollup
 
-新建src/a.js、src/main.js
+新建`src/a.js`、`src/main.js`
 
-###打包
+### 打包
 
 如果是全局安装，直接在项目根目录下执行：
 `rollup -i src/index.js -o dist/bundle.js -f es`;

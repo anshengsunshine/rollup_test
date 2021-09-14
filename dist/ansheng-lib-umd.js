@@ -9,7 +9,12 @@
     };
 
     hello();
-    var world = 'world';
+    var world = 'world'; // import util from './util'
+    // console.log(util.a)
+
+    var util = require("./util");
+
+    console.log(util);
 
     exports.world = world;
 

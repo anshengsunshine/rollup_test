@@ -1,4 +1,6 @@
-import babel from 'rollup-plugin-babel'
+import babel from 'rollup-plugin-babel' 
+import commonjs from 'rollup-plugin-commonjs' 
+
 export default {
     input: "src/index.js",
     output: [
@@ -19,6 +21,7 @@ export default {
     plugins: [
         babel({
             exclude: 'node_modules/**'
-        })
+        }),
+        commonjs()
     ]
 }

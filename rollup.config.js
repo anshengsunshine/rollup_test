@@ -1,6 +1,7 @@
-import babel from 'rollup-plugin-babel' 
-import commonjs from 'rollup-plugin-commonjs' 
-import postcss from 'rollup-plugin-postcss' 
+import babel from 'rollup-plugin-babel'
+import commonjs from 'rollup-plugin-commonjs'
+import postcss from 'rollup-plugin-postcss'
+import autoprefixer from "autoprefixer"
 
 export default {
     input: "src/index.js",
@@ -24,6 +25,11 @@ export default {
             exclude: 'node_modules/**'
         }),
         commonjs(),
-        postcss()
+        postcss({
+            plugins: [
+                autoprefixer()
+            ]
+        }),
+
     ]
 }

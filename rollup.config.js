@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import autoprefixer from "autoprefixer"
+import cssnano from "cssnano"
 
 export default {
     input: "src/index.js",
@@ -27,7 +28,8 @@ export default {
         commonjs(),
         postcss({
             plugins: [
-                autoprefixer()
+                autoprefixer(),
+                cssnano()
             ]
         }),
 

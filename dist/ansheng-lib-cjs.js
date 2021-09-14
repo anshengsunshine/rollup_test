@@ -33,7 +33,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "body {\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    color: green;\r\n}";
+var css_248z = "body{color:green;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}";
 styleInject(css_248z);
 
 hello();

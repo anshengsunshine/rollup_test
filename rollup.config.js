@@ -30,7 +30,8 @@ export default {
             plugins: [
                 autoprefixer(),
                 cssnano()
-            ]
+            ],
+            extract: 'css/index.css' 
         }),
 
     ]

@@ -4,6 +4,7 @@ import postcss from 'rollup-plugin-postcss'
 import autoprefixer from "autoprefixer"
 import cssnano from "cssnano"
 import vue from 'rollup-plugin-vue'
+import { terser } from 'rollup-plugin-terser'
 
 export default {
     input: "src/index.js",
@@ -32,8 +33,9 @@ export default {
                 autoprefixer(),
                 cssnano()
             ],
-            extract: 'css/index.css' 
+            extract: 'css/index.css'
         }),
-        vue()
+        vue(),
+        terser()
     ]
 }

@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function hello() {
-    console.log("hello world");
-}
+const hello = () => {
+    console.log('hello world');
+};
 
 hello();
 

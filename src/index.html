@@ -7,7 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    test css
-    <script src="../dist/ansheng-lib-umd.js"></script>
+    <div id="app">
+        <hello></hello>
+    </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="../dist/ansheng-lib-umd.js"></script>
+<script>
+    Vue.use(anshengLib)
+    new Vue({
+        el:"#app"
+    })
+</script>
 </html>

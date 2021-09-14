@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import autoprefixer from "autoprefixer"
 import cssnano from "cssnano"
+import vue from 'rollup-plugin-vue'
 
 export default {
     input: "src/index.js",
@@ -33,6 +34,6 @@ export default {
             ],
             extract: 'css/index.css' 
         }),
-
+        vue()
     ]
 }

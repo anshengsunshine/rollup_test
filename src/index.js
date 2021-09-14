@@ -1,8 +1,7 @@
-import { hello } from './hello'
-hello()
-export const world = 'world'
+import Hello from './components/Hello.vue'
 
-const util = require("./util")
-console.log(util)
+function install(Vue) {
+    Vue.component(Hello.name, Hello)
+}
 
-import "./test.css"
+export default install

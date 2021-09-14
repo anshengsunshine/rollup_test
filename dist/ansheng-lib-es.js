@@ -1,7 +1,9 @@
-const a = 1;
-
-function main() {
-  console.log(a);
+function hello() {
+    console.log("hello world");
 }
 
-export { main as default };
+hello();
+
+const world = 'world';
+
+export { world };

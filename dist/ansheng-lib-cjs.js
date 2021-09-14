@@ -1,9 +1,13 @@
 'use strict';
 
-const a = 1;
+Object.defineProperty(exports, '__esModule', { value: true });
 
-function main() {
-  console.log(a);
+function hello() {
+    console.log("hello world");
 }
 
-module.exports = main;
+hello();
+
+const world = 'world';
+
+exports.world = world;

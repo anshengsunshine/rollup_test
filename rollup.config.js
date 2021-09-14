@@ -1,5 +1,5 @@
 export default {
-    input: "src/main.js",
+    input: "src/index.js",
     output: [
         {
             file: "./dist/ansheng-lib-umd.js",

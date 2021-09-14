@@ -1,15 +1,19 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.anshengLib = factory());
-}(this, (function () { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.anshengLib = {}));
+}(this, (function (exports) { 'use strict';
 
-  const a = 1;
+    function hello() {
+        console.log("hello world");
+    }
 
-  function main() {
-    console.log(a);
-  }
+    hello();
 
-  return main;
+    const world = 'world';
+
+    exports.world = world;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
 
 })));

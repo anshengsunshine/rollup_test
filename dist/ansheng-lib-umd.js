@@ -1,1 +1,277 @@
-!function(e,t){e&&!e.getElementById("livereloadscript")&&((t=e.createElement("script")).async=1,t.src="//"+(self.location.host||"localhost").split(":")[0]+":35729/livereload.js?snipver=1",t.id="livereloadscript",e.getElementsByTagName("head")[0].appendChild(t))}(self.document),function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t((e="undefined"!=typeof globalThis?globalThis:e||self).anshengLib={})}(this,(function(e){"use strict";function t(e,t,n,o,s,r,i,l,a,d){"boolean"!=typeof i&&(a=l,l=i,i=!1);const c="function"==typeof n?n.options:n;let p;if(e&&e.render&&(c.render=e.render,c.staticRenderFns=e.staticRenderFns,c._compiled=!0,s&&(c.functional=!0)),o&&(c._scopeId=o),r?(p=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),t&&t.call(this,a(e)),e&&e._registeredComponents&&e._registeredComponents.add(r)},c._ssrRegister=p):t&&(p=i?function(e){t.call(this,d(e,this.$root.$options.shadowRoot))}:function(e){t.call(this,l(e))}),p)if(c.functional){const e=c.render;c.render=function(t,n){return p.call(n),e(t,n)}}else{const e=c.beforeCreate;c.beforeCreate=e?[].concat(e,p):[p]}return n}const n="undefined"!=typeof navigator&&/msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());function o(e){return(e,t)=>function(e,t){const o=n?t.media||"default":e,i=r[o]||(r[o]={ids:new Set,styles:[]});if(!i.ids.has(e)){i.ids.add(e);let n=t.source;if(t.map&&(n+="\n/*# sourceURL="+t.map.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(t.map))))+" */"),i.element||(i.element=document.createElement("style"),i.element.type="text/css",t.media&&i.element.setAttribute("media",t.media),void 0===s&&(s=document.head||document.getElementsByTagName("head")[0]),s.appendChild(i.element)),"styleSheet"in i.element)i.styles.push(n),i.element.styleSheet.cssText=i.styles.filter(Boolean).join("\n");else{const e=i.ids.size-1,t=document.createTextNode(n),o=i.element.childNodes;o[e]&&i.element.removeChild(o[e]),o.length?i.element.insertBefore(t,o[e]):i.element.appendChild(t)}}}(e,t)}let s;const r={};const i={name:"Hello",data:function(){return{msg:"hello lib !"}}};var l=function(){var e=this,t=e.$createElement;return(e._self._c||t)("div",{staticClass:"hello"},[e._v("\n  "+e._s(e.msg)+"\n")])};l._withStripped=!0;const a=t({render:l,staticRenderFns:[]},(function(e){e&&e("data-v-414428eb_0",{source:"\n.hello[data-v-414428eb] {\r\n  color: red;\n}\r\n",map:{version:3,sources:["F:\\my_project\\rollup_test\\rollup_test\\src\\components\\Hello.vue"],names:[],mappings:";AAkBA;EACA,UAAA;AACA",file:"Hello.vue",sourcesContent:['<template>\r\n  <div class="hello">\r\n    {{ msg }}\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  name: "Hello",\r\n  data() {\r\n    return {\r\n      msg: "hello lib !",\r\n    };\r\n  },\r\n};\r\n<\/script>\r\n\r\n<style scoped>\r\n.hello {\r\n  color: red;\r\n}\r\n</style>\r\n']},media:void 0})}),i,"data-v-414428eb",false,undefined,!1,o,void 0,void 0);e.install=function(e){e.component(a.name,a)},Object.defineProperty(e,"__esModule",{value:!0})}));
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.myLib = {}));
+}(this, (function (exports) { 'use strict';
+
+  //
+  //
+  //
+  //
+  //
+  //
+  var script$1 = {
+    name: "Hello",
+    data: function data() {
+      return {
+        msg: "hello lib !"
+      };
+    }
+  };
+
+  function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+      if (typeof shadowMode !== 'boolean') {
+          createInjectorSSR = createInjector;
+          createInjector = shadowMode;
+          shadowMode = false;
+      }
+      // Vue.extend constructor export interop.
+      const options = typeof script === 'function' ? script.options : script;
+      // render functions
+      if (template && template.render) {
+          options.render = template.render;
+          options.staticRenderFns = template.staticRenderFns;
+          options._compiled = true;
+          // functional template
+          if (isFunctionalTemplate) {
+              options.functional = true;
+          }
+      }
+      // scopedId
+      if (scopeId) {
+          options._scopeId = scopeId;
+      }
+      let hook;
+      if (moduleIdentifier) {
+          // server build
+          hook = function (context) {
+              // 2.3 injection
+              context =
+                  context || // cached call
+                      (this.$vnode && this.$vnode.ssrContext) || // stateful
+                      (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext); // functional
+              // 2.2 with runInNewContext: true
+              if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+                  context = __VUE_SSR_CONTEXT__;
+              }
+              // inject component styles
+              if (style) {
+                  style.call(this, createInjectorSSR(context));
+              }
+              // register component module identifier for async chunk inference
+              if (context && context._registeredComponents) {
+                  context._registeredComponents.add(moduleIdentifier);
+              }
+          };
+          // used by ssr in case component is cached and beforeCreate
+          // never gets called
+          options._ssrRegister = hook;
+      }
+      else if (style) {
+          hook = shadowMode
+              ? function (context) {
+                  style.call(this, createInjectorShadow(context, this.$root.$options.shadowRoot));
+              }
+              : function (context) {
+                  style.call(this, createInjector(context));
+              };
+      }
+      if (hook) {
+          if (options.functional) {
+              // register for functional component in vue file
+              const originalRender = options.render;
+              options.render = function renderWithStyleInjection(h, context) {
+                  hook.call(context);
+                  return originalRender(h, context);
+              };
+          }
+          else {
+              // inject component registration as beforeCreate hook
+              const existing = options.beforeCreate;
+              options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+          }
+      }
+      return script;
+  }
+
+  const isOldIE = typeof navigator !== 'undefined' &&
+      /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
+  function createInjector(context) {
+      return (id, style) => addStyle(id, style);
+  }
+  let HEAD;
+  const styles = {};
+  function addStyle(id, css) {
+      const group = isOldIE ? css.media || 'default' : id;
+      const style = styles[group] || (styles[group] = { ids: new Set(), styles: [] });
+      if (!style.ids.has(id)) {
+          style.ids.add(id);
+          let code = css.source;
+          if (css.map) {
+              // https://developer.chrome.com/devtools/docs/javascript-debugging
+              // this makes source maps inside style tags work properly in Chrome
+              code += '\n/*# sourceURL=' + css.map.sources[0] + ' */';
+              // http://stackoverflow.com/a/26603875
+              code +=
+                  '\n/*# sourceMappingURL=data:application/json;base64,' +
+                      btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) +
+                      ' */';
+          }
+          if (!style.element) {
+              style.element = document.createElement('style');
+              style.element.type = 'text/css';
+              if (css.media)
+                  style.element.setAttribute('media', css.media);
+              if (HEAD === undefined) {
+                  HEAD = document.head || document.getElementsByTagName('head')[0];
+              }
+              HEAD.appendChild(style.element);
+          }
+          if ('styleSheet' in style.element) {
+              style.styles.push(code);
+              style.element.styleSheet.cssText = style.styles
+                  .filter(Boolean)
+                  .join('\n');
+          }
+          else {
+              const index = style.ids.size - 1;
+              const textNode = document.createTextNode(code);
+              const nodes = style.element.childNodes;
+              if (nodes[index])
+                  style.element.removeChild(nodes[index]);
+              if (nodes.length)
+                  style.element.insertBefore(textNode, nodes[index]);
+              else
+                  style.element.appendChild(textNode);
+          }
+      }
+  }
+
+  /* script */
+  const __vue_script__$1 = script$1;
+
+  /* template */
+  var __vue_render__$1 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", { staticClass: "hello" }, [
+      _vm._v("\n  " + _vm._s(_vm.msg) + "\n")
+    ])
+  };
+  var __vue_staticRenderFns__$1 = [];
+  __vue_render__$1._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$1 = function (inject) {
+      if (!inject) return
+      inject("data-v-18c8e7e6_0", { source: ".hello[data-v-18c8e7e6] {\n  color: red;\n}\n", map: {"version":3,"sources":["Hello.vue"],"names":[],"mappings":"AAAA;EACE,UAAU;AACZ","file":"Hello.vue","sourcesContent":[".hello {\n  color: red;\n}\n"]}, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__$1 = "data-v-18c8e7e6";
+    /* module identifier */
+    const __vue_module_identifier__$1 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$1 = false;
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    const __vue_component__$1 = /*#__PURE__*/normalizeComponent(
+      { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
+      __vue_inject_styles__$1,
+      __vue_script__$1,
+      __vue_scope_id__$1,
+      __vue_is_functional_template__$1,
+      __vue_module_identifier__$1,
+      false,
+      createInjector,
+      undefined,
+      undefined
+    );
+
+  function Hello (Vue) {
+    Vue.component(__vue_component__$1.name, __vue_component__$1);
+  }
+
+  //
+  //
+  //
+  //
+  //
+  //
+  var script = {
+    name: "Test",
+    data: function data() {
+      return {
+        msg: "test lib !"
+      };
+    }
+  };
+
+  /* script */
+  const __vue_script__ = script;
+
+  /* template */
+  var __vue_render__ = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", { staticClass: "test" }, [
+      _vm._v("\n  " + _vm._s(_vm.msg) + "\n")
+    ])
+  };
+  var __vue_staticRenderFns__ = [];
+  __vue_render__._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__ = function (inject) {
+      if (!inject) return
+      inject("data-v-01e35232_0", { source: ".test[data-v-01e35232] {\n  color: green;\n}\n", map: {"version":3,"sources":["Test.vue"],"names":[],"mappings":"AAAA;EACE,YAAY;AACd","file":"Test.vue","sourcesContent":[".test {\n  color: green;\n}\n"]}, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__ = "data-v-01e35232";
+    /* module identifier */
+    const __vue_module_identifier__ = undefined;
+    /* functional template */
+    const __vue_is_functional_template__ = false;
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    const __vue_component__ = /*#__PURE__*/normalizeComponent(
+      { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+      __vue_inject_styles__,
+      __vue_script__,
+      __vue_scope_id__,
+      __vue_is_functional_template__,
+      __vue_module_identifier__,
+      false,
+      createInjector,
+      undefined,
+      undefined
+    );
+
+  function Test (Vue) {
+    Vue.component(__vue_component__.name, __vue_component__);
+  }
+
+  function install(Vue) {
+    Vue.use(Hello);
+    Vue.use(Test);
+  }
+   //umd
+
+  exports.Hello = Hello;
+  exports.Test = Test;
+  exports['default'] = install;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

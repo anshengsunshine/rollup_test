@@ -1,22 +1,22 @@
 <template>
-  <div class="hello">
+  <div class="test">
     {{ msg }}
   </div>
 </template>
 
 <script>
 export default {
-  name: "Hello",
+  name: "Test",
   data() {
     return {
-      msg: "hello lib !",
+      msg: "test lib !",
     };
   },
 };
 </script>
 
-<style scoped>
-.hello {
-  color: red;
+<style scoped lang="less">
+.test {
+  color: green;
 }
 </style>

@@ -1,8 +1,9 @@
 {
-  "name": "rollup_test",
+  "name": "ansheng-lib",
   "version": "1.0.0",
   "description": "rollup从入门到打包一个组件库",
-  "main": "index.js",
+  "main": "dist/ansheng-lib-cjs.js",
+  "module": "dist/ansheng-lib-es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -wc"

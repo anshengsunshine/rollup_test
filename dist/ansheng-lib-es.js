@@ -1,9 +1,8 @@
-const hello = () => {
-    console.log('hello world');
+var hello = function hello() {
+  console.log('hello world');
 };
 
 hello();
-
-const world = 'world';
+var world = 'world';
 
 export { world };

@@ -4,13 +4,12 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.anshengLib = {}));
 }(this, (function (exports) { 'use strict';
 
-    const hello = () => {
-        console.log('hello world');
+    var hello = function hello() {
+      console.log('hello world');
     };
 
     hello();
-
-    const world = 'world';
+    var world = 'world';
 
     exports.world = world;
 

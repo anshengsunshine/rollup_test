@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Hello",
+  name: "AslHello",
   data() {
     return {
       msg: "hello lib !",

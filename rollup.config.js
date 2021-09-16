@@ -8,7 +8,7 @@ export default {
     {
       file: './dist/ansheng-lib-umd.js',
       format: 'umd',
-      name: 'myLib'
+      name: 'anshengLib'
     },
     {
       file: './dist/ansheng-lib-es.js',

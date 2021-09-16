@@ -1,8 +1,13 @@
-import Hello from "./components/Hello"
-import Test from "./components/Test"
+import AslHello from "./components/AslHello/index"
+import AslTest from "./components/AslTest/index"
 function install(Vue){
-  Vue.use(Hello)
-  Vue.use(Test)
+  Vue.use(AslHello)
+  Vue.use(AslTest)
+}
+
+//通过`script`标签引入组件库的情况，注册所有组件
+if (window && window.Vue) {
+  Vue.use(install)
 }
 
 /***
@@ -14,8 +19,8 @@ export { a, b }
 ***/
 
 export {    
-  Hello,
-  Test
+  AslHello,
+  AslTest
 }
 
 export default install  //umd

@@ -9,7 +9,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 //
 //
 var script$1 = {
-  name: "Hello",
+  name: "AslHello",
   data: function data() {
     return {
       msg: "hello lib !"
@@ -163,11 +163,11 @@ __vue_render__$1._withStripped = true;
   /* style */
   const __vue_inject_styles__$1 = function (inject) {
     if (!inject) return
-    inject("data-v-18c8e7e6_0", { source: ".hello[data-v-18c8e7e6] {\n  color: red;\n}\n", map: {"version":3,"sources":["Hello.vue"],"names":[],"mappings":"AAAA;EACE,UAAU;AACZ","file":"Hello.vue","sourcesContent":[".hello {\n  color: red;\n}\n"]}, media: undefined });
+    inject("data-v-06879792_0", { source: ".hello[data-v-06879792] {\n  color: red;\n}\n", map: {"version":3,"sources":["AslHello.vue"],"names":[],"mappings":"AAAA;EACE,UAAU;AACZ","file":"AslHello.vue","sourcesContent":[".hello {\n  color: red;\n}\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$1 = "data-v-18c8e7e6";
+  const __vue_scope_id__$1 = "data-v-06879792";
   /* module identifier */
   const __vue_module_identifier__$1 = undefined;
   /* functional template */
@@ -191,7 +191,7 @@ __vue_render__$1._withStripped = true;
     undefined
   );
 
-function Hello (Vue) {
+function AslHello (Vue) {
   Vue.component(__vue_component__$1.name, __vue_component__$1);
 }
 
@@ -202,7 +202,7 @@ function Hello (Vue) {
 //
 //
 var script = {
-  name: "Test",
+  name: "AslTest",
   data: function data() {
     return {
       msg: "test lib !"
@@ -228,11 +228,11 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = function (inject) {
     if (!inject) return
-    inject("data-v-01e35232_0", { source: ".test[data-v-01e35232] {\n  color: green;\n}\n", map: {"version":3,"sources":["Test.vue"],"names":[],"mappings":"AAAA;EACE,YAAY;AACd","file":"Test.vue","sourcesContent":[".test {\n  color: green;\n}\n"]}, media: undefined });
+    inject("data-v-19bb47d7_0", { source: ".test[data-v-19bb47d7] {\n  color: green;\n}\n", map: {"version":3,"sources":["Test.vue"],"names":[],"mappings":"AAAA;EACE,YAAY;AACd","file":"Test.vue","sourcesContent":[".test {\n  color: green;\n}\n"]}, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__ = "data-v-01e35232";
+  const __vue_scope_id__ = "data-v-19bb47d7";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
@@ -256,16 +256,21 @@ __vue_render__._withStripped = true;
     undefined
   );
 
-function Test (Vue) {
+function AslTest (Vue) {
   Vue.component(__vue_component__.name, __vue_component__);
 }
 
 function install(Vue) {
-  Vue.use(Hello);
-  Vue.use(Test);
+  Vue.use(AslHello);
+  Vue.use(AslTest);
+} //通过`script`标签引入组件库的情况，注册所有组件
+
+
+if (window && window.Vue) {
+  Vue.use(install);
 }
  //umd
 
-exports.Hello = Hello;
-exports.Test = Test;
+exports.AslHello = AslHello;
+exports.AslTest = AslTest;
 exports['default'] = install;
